@@ -60,3 +60,24 @@ Angular tiene varios archivos importantes para el correcto desarrollo y funciona
 - angular.json son configuraciones propias de angular
 - tsconfig.json son conriguraciones de typescript
 - .nvmrc te dará una versión recomendada de node para correr el proyecto (la puedes definir tú haciendo `node -v > .nvmrc`)
+
+### Conceptos básicos de TypeScript para usar Angular
+
+```typescript
+const username: string = 'mike';
+
+const sum = (a: number, b: number): number => {
+  return a + b;
+}
+
+console.log(sum(4, 8));
+
+class Person {
+  constructor(public age: number, public lastName: string) {}
+}
+
+const mike = new Person(24, 'Reyes');
+
+console.log(mike);
+
+```
