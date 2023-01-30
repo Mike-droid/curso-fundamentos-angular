@@ -24,4 +24,24 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://
+angular.io/cli) page.
+
+---
+
+## Curso de fundamentos de Angular
+
+## Primeros pasos
+
+### Qué es Angular: ventajas y cómo aprenderlo
+
+Angular se considera no solo un framework, es toda una plataforma con módulos y paquetes listos para ser usados en tu aplicación.
+Angular tiene un gran rendimientos de las apps. Es multiplataforma.
+
+### Instalación de Angular CLI
+
+En la [documentación oficial](https://angular.io/guide/setup-local) nos dice que hagamos `npm i -g angular/cli`
+
+- Para saber qué versión tienes de la angular CLI, haz `ng version`.
+- Para crear un nuevo proyecto, haz `ng new 'nombre-del-proyecto'` (ten cuidado de NO usar mayúsculas, espacios, caracteres con acentos o ñÑ).
+- Para correr el proyecto usamos el bien conocido `npm start`
