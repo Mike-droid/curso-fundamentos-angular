@@ -8,6 +8,23 @@
   <button (click)="decrementAge()">Age --</button>
 </div>
 
+<div class="box" (scroll)="onScroll($event)">
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor enim vel delectus officiis debitis expedita, eaque velit nostrum porro harum sit vitae voluptate adipisci, quam dignissimos nam amet quidem atque.
+    Dolore quisquam laboriosam doloribus sunt, libero impedit! Nobis tempore vel veniam tenetur possimus praesentium voluptatum molestiae, saepe impedit eius odit ratione in fugiat hic, ipsa sit animi quo maxime. Illo.
+    Quasi incidunt itaque qui dolores commodi! Animi, dolorum facilis eveniet incidunt hic commodi suscipit alias iure possimus reiciendis provident et dignissimos eos praesentium odio veritatis saepe. Fugit quis necessitatibus dolorem!
+    Dicta odio, quo quaerat rem soluta ut corrupti nesciunt repudiandae nobis, facere molestiae accusamus officiis, eaque nihil. Cum illum, exercitationem, ratione nesciunt dolor repudiandae architecto sunt ea pariatur voluptatum suscipit!
+    Vero labore exercitationem excepturi, assumenda, placeat aliquam culpa officiis nulla natus dolorum delectus vitae doloribus error aliquid deleniti. Quaerat impedit asperiores necessitatibus suscipit delectus eligendi veniam at eius harum quae!
+    Nemo eaque dolore corporis delectus numquam rerum consectetur beatae in, neque, magni voluptatum quas iusto, ipsam deleniti deserunt. Quidem, assumenda harum deserunt laudantium necessitatibus ut ex provident minima maxime voluptate.
+    Nesciunt vitae animi inventore fuga! Pariatur dolore doloremque porro impedit, non similique sapiente enim excepturi ipsa consequuntur unde, quibusdam quos tempore aut nam ullam magni labore nostrum voluptate quae perferendis.
+    Commodi repudiandae illo, quasi nobis ea incidunt rem esse, ex sint fugiat facilis aliquid enim quam impedit quis. Maiores beatae consequuntur quisquam iure pariatur quaerat assumenda saepe ex! Odit, rerum.
+    Alias nostrum amet ad commodi. Laudantium nihil laboriosam fugiat officia incidunt esse recusandae, sed, omnis harum fugit, expedita doloribus! Maiores vitae eum atque fuga. Distinctio ut rerum ullam placeat nemo.
+    Dolores quisquam excepturi iste culpa vero in voluptatem modi, nobis esse ut, beatae saepe molestias facilis distinctio aliquid assumenda fuga natus a laborum doloribus nulla. Obcaecati corporis mollitia animi ex.
+  </p>
+</div>
+<p>Nombre: {{ person.name }}</p>
+<input type="text" [value]="person.name" (keyup)="changeName($event)">
+
 <hr>
 
 <h1>Propiedades</h1>

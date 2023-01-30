@@ -222,3 +222,5 @@ export class AppComponent {
 }
 
 ```
+
+### Otros eventos que puedes escuchar
