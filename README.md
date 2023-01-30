@@ -81,3 +81,56 @@ const mike = new Person(24, 'Reyes');
 console.log(mike);
 
 ```
+
+## Comunicación de datos
+
+### String interpolation
+
+Angular divide el trabajo de la app en componentes.
+
+- html para renderizado
+- css para estilos
+- ts para lógica
+
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+  title = 'my-store';
+}
+
+```
+
+El decorador '@Component' le dice a la clase cómo debe comportarse la clase 'AppComponent'.
+
+Desde el html podemos usar las variables del archivo TS:
+
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+  name = 'Mike'; //* estas son variables públicas por defecto
+  age: number = 24;
+  img: string = 'https://source.unsplash.com/random';
+}
+
+```
+
+```html
+<h1>Hola mundo!</h1>
+<h2>{{ 'Hola Mundo'.repeat(5) }}</h2>
+<p>3+3 = {{ 3 + 3 }}</p>
+<h3>Hola, soy {{ name }} y tengo {{ age }} años</h3>
+<img src="{{ img }}" alt="imagen random">
+
+```
