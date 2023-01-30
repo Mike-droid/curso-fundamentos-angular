@@ -51,3 +51,12 @@ En la [documentación oficial](https://angular.io/guide/setup-local) nos dice qu
 - Correr proyecto y abrir navegador automáticamente: `ng serve -o` (o para open)
 - Especificar un puerto donde correr el proyecto: `ng serve --port=3500`
 - Si hacemos `ng -version` dentro de la carpeta del proyecto, nos dará información del proyecto y las dependencias del mismo.
+
+### Estructura de un proyecto en Angular
+
+Angular tiene varios archivos importantes para el correcto desarrollo y funcionamiento del proyecto.
+
+- .editorconfig es para que todo el equipo de desarrolladores sigan las mismas reglas de escrituras del código
+- angular.json son configuraciones propias de angular
+- tsconfig.json son conriguraciones de typescript
+- .nvmrc te dará una versión recomendada de node para correr el proyecto (la puedes definir tú haciendo `node -v > .nvmrc`)
