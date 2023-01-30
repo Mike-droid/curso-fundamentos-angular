@@ -45,3 +45,9 @@ En la [documentación oficial](https://angular.io/guide/setup-local) nos dice qu
 - Para saber qué versión tienes de la angular CLI, haz `ng version`.
 - Para crear un nuevo proyecto, haz `ng new 'nombre-del-proyecto'` (ten cuidado de NO usar mayúsculas, espacios, caracteres con acentos o ñÑ).
 - Para correr el proyecto usamos el bien conocido `npm start`
+
+### Comandos de Angular para correr tu proyecto
+
+- Correr proyecto y abrir navegador automáticamente: `ng serve -o` (o para open)
+- Especificar un puerto donde correr el proyecto: `ng serve --port=3500`
+- Si hacemos `ng -version` dentro de la carpeta del proyecto, nos dará información del proyecto y las dependencias del mismo.
