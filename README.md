@@ -134,3 +134,41 @@ export class AppComponent {
 <img src="{{ img }}" alt="imagen random">
 
 ```
+
+### Property Binding
+
+Esto sería de la siguiente manera:
+
+```html
+<h1>Propiedades</h1>
+<button [disabled]="btnDisabled">Enviar</button>
+<input type="text" name="" id="" [value]="person.name">
+<progress max="100" [value]="progressBar"></progress>
+<img [src]="person.urlImage" alt="random image" width="100px">
+
+```
+
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+  btnDisabled: boolean = true;
+  progressBar: number = 50;
+
+  person = {
+    name: 'Mike',
+    age: 24,
+    urlImage: 'https://source.unsplash.com/random',
+  }
+}
+
+```
+
+¿Cuál es mejor? ¿String interpolation o Property Binding?
+
+String interpolation es mejor para funciones de JS o TS que se renderizaran en el HTML. Mientras que las Property Binding son propiedades de etiquetas HTML.

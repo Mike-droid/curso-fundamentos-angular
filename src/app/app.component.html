@@ -1,5 +1,13 @@
+<h1>Propiedades</h1>
+<button [disabled]="btnDisabled">Enviar</button>
+<input type="text" name="" id="" [value]="person.name">
+<progress max="100" [value]="progressBar"></progress>
+<img [src]="person.urlImage" alt="random image" width="100px">
+
+<hr>
+
 <h1>Hola mundo!</h1>
 <h2>{{ 'Hola Mundo'.repeat(5) }}</h2>
 <p>3+3 = {{ 3 + 3 }}</p>
-<h3>Hola, soy {{ name }} y tengo {{ age }} años</h3>
-<img src="{{ img }}" alt="imagen random">
+<h3>Hola, soy {{ person.name }} y tengo {{ person.age }} años</h3>
+<img src="{{ person.urlImage }}" alt="imagen random" width="100px">

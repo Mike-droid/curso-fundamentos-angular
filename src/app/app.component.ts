@@ -6,7 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  name = 'Mike'; //* estas son variables públicas por defecto
-  age: number = 24;
-  img: string = 'https://source.unsplash.com/random';
+  btnDisabled: boolean = true;
+  progressBar: number = 50;
+
+  person = {
+    name: 'Mike',
+    age: 24,
+    urlImage: 'https://source.unsplash.com/random',
+  }
 }
