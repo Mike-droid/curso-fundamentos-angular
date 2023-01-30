@@ -172,3 +172,53 @@ export class AppComponent {
 ¿Cuál es mejor? ¿String interpolation o Property Binding?
 
 String interpolation es mejor para funciones de JS o TS que se renderizaran en el HTML. Mientras que las Property Binding son propiedades de etiquetas HTML.
+
+### Introducción al Event Binding de Angular
+
+```html
+<h1>Eventos</h1>
+<button [disabled]="btnDisabled">Enviar</button>
+<button (click)="toggleButton()">{{ btnText }} button</button>
+
+<div>
+  <p>Edad: {{ person.age }}</p>
+  <button (click)="incrementAge()">Age ++</button>
+  <button (click)="decrementAge()">Age --</button>
+</div>
+```
+
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+  btnDisabled: boolean = true;
+  progressBar: number = 50;
+  btnText = 'Enable';
+
+  person = {
+    name: 'Mike',
+    age: 24,
+    urlImage: 'https://source.unsplash.com/random',
+  }
+
+  toggleButton() {
+    this.btnDisabled === true ? this.btnText = 'Disable' : this.btnText = 'Enable';
+
+    this.btnDisabled = !this.btnDisabled;
+  }
+
+  incrementAge() {
+    this.person.age += 1;
+  }
+
+  decrementAge() {
+    this.person.age -= 1;
+  }
+}
+
+```
