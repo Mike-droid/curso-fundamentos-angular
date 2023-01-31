@@ -340,3 +340,19 @@ import { AppComponent } from './app.component';
 export class AppModule { }
 
 ```
+
+## Estructuras de control
+
+### Uso de *ngIf
+
+```html
+<h1>*ngIf</h1>
+<input type="text" required [(ngModel)]="person.name">
+<p *ngIf="person.name === 'Mike'">Soy Mike</p>
+
+<p *ngIf="person.name === 'Julio' && person.age >= 18; else elseBlock">Soy Julio</p>
+<ng-template #elseBlock>
+  <p>Bloque de else</p>
+</ng-template>
+
+```
