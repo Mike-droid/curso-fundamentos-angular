@@ -224,3 +224,119 @@ export class AppComponent {
 ```
 
 ### Otros eventos que puedes escuchar
+
+```html
+<h1>Eventos</h1>
+<button [disabled]="btnDisabled">Enviar</button>
+<button (click)="toggleButton()">{{ btnText }} button</button>
+
+<div>
+  <p>Edad: {{ person.age }}</p>
+  <button (click)="incrementAge()">Age ++</button>
+  <button (click)="decrementAge()">Age --</button>
+</div>
+
+<div class="box" (scroll)="onScroll($event)">
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor enim vel delectus officiis debitis expedita, eaque velit nostrum porro harum sit vitae voluptate adipisci, quam dignissimos nam amet quidem atque.
+    Dolore quisquam laboriosam doloribus sunt, libero impedit! Nobis tempore vel veniam tenetur possimus praesentium voluptatum molestiae, saepe impedit eius odit ratione in fugiat hic, ipsa sit animi quo maxime. Illo.
+    Quasi incidunt itaque qui dolores commodi! Animi, dolorum facilis eveniet incidunt hic commodi suscipit alias iure possimus reiciendis provident et dignissimos eos praesentium odio veritatis saepe. Fugit quis necessitatibus dolorem!
+    Dicta odio, quo quaerat rem soluta ut corrupti nesciunt repudiandae nobis, facere molestiae accusamus officiis, eaque nihil. Cum illum, exercitationem, ratione nesciunt dolor repudiandae architecto sunt ea pariatur voluptatum suscipit!
+    Vero labore exercitationem excepturi, assumenda, placeat aliquam culpa officiis nulla natus dolorum delectus vitae doloribus error aliquid deleniti. Quaerat impedit asperiores necessitatibus suscipit delectus eligendi veniam at eius harum quae!
+    Nemo eaque dolore corporis delectus numquam rerum consectetur beatae in, neque, magni voluptatum quas iusto, ipsam deleniti deserunt. Quidem, assumenda harum deserunt laudantium necessitatibus ut ex provident minima maxime voluptate.
+    Nesciunt vitae animi inventore fuga! Pariatur dolore doloremque porro impedit, non similique sapiente enim excepturi ipsa consequuntur unde, quibusdam quos tempore aut nam ullam magni labore nostrum voluptate quae perferendis.
+    Commodi repudiandae illo, quasi nobis ea incidunt rem esse, ex sint fugiat facilis aliquid enim quam impedit quis. Maiores beatae consequuntur quisquam iure pariatur quaerat assumenda saepe ex! Odit, rerum.
+    Alias nostrum amet ad commodi. Laudantium nihil laboriosam fugiat officia incidunt esse recusandae, sed, omnis harum fugit, expedita doloribus! Maiores vitae eum atque fuga. Distinctio ut rerum ullam placeat nemo.
+    Dolores quisquam excepturi iste culpa vero in voluptatem modi, nobis esse ut, beatae saepe molestias facilis distinctio aliquid assumenda fuga natus a laborum doloribus nulla. Obcaecati corporis mollitia animi ex.
+  </p>
+</div>
+<p>Nombre: {{ person.name }}</p>
+<input type="text" [value]="person.name" (keyup)="changeName($event)">
+
+```
+
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+  btnDisabled: boolean = true;
+  progressBar: number = 50;
+  btnText = 'Enable';
+
+  person = {
+    name: 'Mike',
+    age: 24,
+    urlImage: 'https://source.unsplash.com/random',
+  }
+
+  toggleButton() {
+    this.btnDisabled === true ? this.btnText = 'Disable' : this.btnText = 'Enable';
+
+    this.btnDisabled = !this.btnDisabled;
+  }
+
+  incrementAge() {
+    this.person.age += 1;
+  }
+
+  decrementAge() {
+    this.person.age -= 1;
+  }
+
+  onScroll(event: Event) {
+    const element = event.target as HTMLElement;
+    console.log(element.scrollTop);
+  }
+
+  changeName(event: Event) {
+    const element = event.target as HTMLInputElement;
+    this.person.name = element.value;
+  }
+}
+
+```
+
+### Data binding con ngModel
+
+Esto es una combinación entre escuchar un evento y settear un propiedad. Es un enlace de doble via.
+
+```html
+<h1>NgModel</h1>
+<p>Nombre {{ person.name }}</p>
+
+<input type="text" required #nameInput="ngModel" [(ngModel)]="person.name" />
+<p>Name Valid: {{ nameInput.valid }}</p>
+
+<input type="number" max="25" min="10" required #ageInput="ngModel" [(ngModel)]="person.age" />
+<p>Age Valid: {{ ageInput.valid }}</p>
+
+```
+
+```typescript
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms'; // requerido para ngModule
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule // requerido para ngModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+```
