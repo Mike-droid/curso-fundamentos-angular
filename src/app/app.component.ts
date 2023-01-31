@@ -16,6 +16,9 @@ export class AppComponent {
     urlImage: 'https://source.unsplash.com/random',
   }
 
+  names: string[] = ['Pepe', 'Antonio', 'Juan'];
+  newName: string = '';
+
   toggleButton() {
     this.btnDisabled === true ? this.btnText = 'Disable' : this.btnText = 'Enable';
 
@@ -38,5 +41,14 @@ export class AppComponent {
   changeName(event: Event) {
     const element = event.target as HTMLInputElement;
     this.person.name = element.value;
+  }
+
+  addName() {
+    this.names.push(this.newName);
+    this.newName = '';
+  }
+
+  removeName(index: number) {
+    this.names.splice(index, 1);
   }
 }
