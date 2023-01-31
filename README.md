@@ -549,3 +549,24 @@ export class AppComponent {
 </div>
 
 ```
+
+### Uso de ngSwitch
+
+```html
+<h1>ngSwitch</h1>
+<input type="text" required [(ngModel)]="person.name">
+<div [ngSwitch]="person.name">
+  <p *ngSwitchCase="'Mike'">
+    La persona es Mike
+  </p>
+  <p *ngSwitchCase="'Julio'">
+    La persona es Julio
+  </p>
+  <p *ngSwitchCase="'Ximena'">
+    La persona es Ximena
+  </p>
+  <p *ngSwitchDefault>
+    No hace match
+  </p>
+</div>
+```
