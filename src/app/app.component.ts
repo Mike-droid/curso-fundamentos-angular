@@ -7,6 +7,12 @@ import { Product } from './product.model';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  person = {
+    name: ''
+  }
+
+  widthImg = 10
+
   products: Product[] = [
     {
       name: 'EL mejor juguete',
