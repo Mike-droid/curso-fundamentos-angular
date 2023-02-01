@@ -1,108 +1,31 @@
-<h1>ngSwitch</h1>
-<input type="text" required [(ngModel)]="person.name">
-<div [ngSwitch]="person.name">
-  <p *ngSwitchCase="'Mike'">
-    La persona es Mike
-  </p>
-  <p *ngSwitchCase="'Julio'">
-    La persona es Julio
-  </p>
-  <p *ngSwitchCase="'Ximena'">
-    La persona es Ximena
-  </p>
-  <p *ngSwitchDefault>
-    No hace match
-  </p>
-</div>
+<h1>Todo list</h1>
+<section>
+  <label for="todo">
+    Todo:
+    <textarea name="todo" id="todo" cols="30" rows="10" [(ngModel)]="todo"></textarea>
+  </label>
+  <button (click)="createTodo()">Add todo</button>
+</section>
 
 <hr>
 
-<h1>*nfFor Objs</h1>
-<div>
-  <div *ngFor="let product of products">
-    <img width="200" [src]="product.image" [alt]="product.name">
-    <h2>${{ product.price }}</h2>
-    <p>{{ product.name }}</p>
-  </div>
-</div>
+<section *ngIf="todos.length > 0">
+  <h2>Todos:</h2>
+  <ol>
+    <li *ngFor="let todo of todos; index as index">
+      {{ todo }}
+      <button (click)="completeTodo(index)">Mark as done</button>
+    </li>
+  </ol>
+</section>
 
 <hr>
 
-<h1>*ngFor</h1>
-<input type="text" required [(ngModel)]="newName">
-<button (click)="addName()" [disabled]="newName.length === 0">Add name</button>
-<h3 *ngIf="newName.length === 0">No hay nombres</h3>
-<ul>
-  <li *ngFor="let name of names; index as index"> <!-- debo renombrarlo forsozamente  -->
-    {{ index }} {{ name }}
-    <button (click)="removeName(index)">Delete name</button>
-  </li>
-</ul>
-
-<hr>
-
-<h1>*ngIf</h1>
-<input type="text" required [(ngModel)]="person.name">
-<p *ngIf="person.name === 'Mike'">Soy Mike</p>
-
-<p *ngIf="person.name === 'Julio' && person.age >= 18; else elseBlock">Soy Julio</p>
-<ng-template #elseBlock>
-  <p>Bloque de else</p>
-</ng-template>
-
-
-<hr>
-
-<h1>NgModel</h1>
-<p>Nombre {{ person.name }}</p>
-
-<input type="text" required #nameInput="ngModel" [(ngModel)]="person.name" />
-<p>Name Valid: {{ nameInput.valid }}</p>
-
-<input type="number" max="25" min="10" required #ageInput="ngModel" [(ngModel)]="person.age" />
-<p>Age Valid: {{ ageInput.valid }}</p>
-
-<hr>
-
-<h1>Eventos</h1>
-<button [disabled]="btnDisabled">Enviar</button>
-<button (click)="toggleButton()">{{ btnText }} button</button>
-
-<div>
-  <p>Edad: {{ person.age }}</p>
-  <button (click)="incrementAge()">Age ++</button>
-  <button (click)="decrementAge()">Age --</button>
-</div>
-
-<div class="box" (scroll)="onScroll($event)">
-  <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor enim vel delectus officiis debitis expedita, eaque velit nostrum porro harum sit vitae voluptate adipisci, quam dignissimos nam amet quidem atque.
-    Dolore quisquam laboriosam doloribus sunt, libero impedit! Nobis tempore vel veniam tenetur possimus praesentium voluptatum molestiae, saepe impedit eius odit ratione in fugiat hic, ipsa sit animi quo maxime. Illo.
-    Quasi incidunt itaque qui dolores commodi! Animi, dolorum facilis eveniet incidunt hic commodi suscipit alias iure possimus reiciendis provident et dignissimos eos praesentium odio veritatis saepe. Fugit quis necessitatibus dolorem!
-    Dicta odio, quo quaerat rem soluta ut corrupti nesciunt repudiandae nobis, facere molestiae accusamus officiis, eaque nihil. Cum illum, exercitationem, ratione nesciunt dolor repudiandae architecto sunt ea pariatur voluptatum suscipit!
-    Vero labore exercitationem excepturi, assumenda, placeat aliquam culpa officiis nulla natus dolorum delectus vitae doloribus error aliquid deleniti. Quaerat impedit asperiores necessitatibus suscipit delectus eligendi veniam at eius harum quae!
-    Nemo eaque dolore corporis delectus numquam rerum consectetur beatae in, neque, magni voluptatum quas iusto, ipsam deleniti deserunt. Quidem, assumenda harum deserunt laudantium necessitatibus ut ex provident minima maxime voluptate.
-    Nesciunt vitae animi inventore fuga! Pariatur dolore doloremque porro impedit, non similique sapiente enim excepturi ipsa consequuntur unde, quibusdam quos tempore aut nam ullam magni labore nostrum voluptate quae perferendis.
-    Commodi repudiandae illo, quasi nobis ea incidunt rem esse, ex sint fugiat facilis aliquid enim quam impedit quis. Maiores beatae consequuntur quisquam iure pariatur quaerat assumenda saepe ex! Odit, rerum.
-    Alias nostrum amet ad commodi. Laudantium nihil laboriosam fugiat officia incidunt esse recusandae, sed, omnis harum fugit, expedita doloribus! Maiores vitae eum atque fuga. Distinctio ut rerum ullam placeat nemo.
-    Dolores quisquam excepturi iste culpa vero in voluptatem modi, nobis esse ut, beatae saepe molestias facilis distinctio aliquid assumenda fuga natus a laborum doloribus nulla. Obcaecati corporis mollitia animi ex.
-  </p>
-</div>
-<p>Nombre: {{ person.name }}</p>
-<input type="text" [value]="person.name" (keyup)="changeName($event)">
-
-<hr>
-
-<h1>Propiedades</h1>
-<button [disabled]="btnDisabled">Enviar</button>
-<input type="text" name="" id="" [value]="person.name">
-<progress max="100" [value]="person.age"></progress>
-<img [src]="person.urlImage" alt="random image" width="100px">
-
-<hr>
-
-<h1>Hola mundo!</h1>
-<h2>{{ 'Hola Mundo'.repeat(5) }}</h2>
-<p>3+3 = {{ 3 + 3 }}</p>
-<h3>Hola, soy {{ person.name }} y tengo {{ person.age }} años</h3>
-<img src="{{ person.urlImage }}" alt="imagen random" width="100px">
+<section *ngIf="doneTodos.length > 0">
+  <h2>Done todos:</h2>
+  <ol>
+    <li *ngFor="let done of doneTodos; index as index">
+      {{ done }}
+    </li>
+  </ol>
+</section>
