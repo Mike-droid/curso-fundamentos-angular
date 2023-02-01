@@ -1,31 +1,7 @@
-<h1>Todo list</h1>
-<section>
-  <label for="todo">
-    Todo:
-    <textarea name="todo" id="todo" cols="30" rows="10" [(ngModel)]="todo"></textarea>
-  </label>
-  <button (click)="createTodo()">Add todo</button>
-</section>
-
-<hr>
-
-<section *ngIf="todos.length > 0">
-  <h2>Todos:</h2>
-  <ol>
-    <li *ngFor="let todo of todos; index as index">
-      {{ todo }}
-      <button (click)="completeTodo(index)">Mark as done</button>
-    </li>
-  </ol>
-</section>
-
-<hr>
-
-<section *ngIf="doneTodos.length > 0">
-  <h2>Done todos:</h2>
-  <ol>
-    <li *ngFor="let done of doneTodos; index as index">
-      {{ done }}
-    </li>
-  </ol>
+<section class="products--grid">
+  <div *ngFor="let product of products">
+    <img [src]="product.image" [alt]="product.name">
+    <h2>${{ product.price }}</h2>
+    <p>{{ product.name }}</p>
+  </div>
 </section>

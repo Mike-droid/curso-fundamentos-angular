@@ -574,3 +574,7 @@ export class AppComponent {
 ### Angular Devtools
 
 [Angular Devtools](https://chrome.google.com/webstore/detail/angular-devtools/ienfalfjdbdpebioblfackkekamfmbnh)
+
+## Estilos
+
+### Estilos a la lista de productos

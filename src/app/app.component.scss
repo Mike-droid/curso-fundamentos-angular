@@ -1,6 +1,33 @@
-.box {
-  height: 200px;
-  width: 200px;
-  overflow-y: scroll;
-  background-color: green;
+/*mobile*/
+.products--grid {
+  display: flex;
+  flex-direction: column;
+  div {
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    h2, p {
+      margin: 0;
+    }
+  }
+}
+
+/*tablet*/
+@media screen and (min-width: 40em) {
+  .products--grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+  }
+}
+
+
+/*desktop*/
+@media screen and (min-width: 80em) {
+  .products--grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+  }
 }
