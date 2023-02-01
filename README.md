@@ -570,3 +570,7 @@ export class AppComponent {
   </p>
 </div>
 ```
+
+### Angular Devtools
+
+[Angular Devtools](https://chrome.google.com/webstore/detail/angular-devtools/ienfalfjdbdpebioblfackkekamfmbnh)
