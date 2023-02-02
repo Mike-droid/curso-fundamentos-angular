@@ -11,6 +11,12 @@ export class AppComponent {
     name: ''
   }
 
+  register = {
+    name: '',
+    email: '',
+    password: ''
+  }
+
   widthImg = 10
 
   box = {
@@ -52,4 +58,8 @@ export class AppComponent {
       image: './assets/images/glasses.jpg'
     }
   ]
+
+  onRegister() {
+    console.log(this.register);
+  }
 }

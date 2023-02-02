@@ -580,3 +580,7 @@ export class AppComponent {
 ### Estilos a la lista de productos
 
 ### NgClass y NgStyle
+
+### Crear un formulario
+
+Cuando usamos botones dentro de un formulario, Angular nos obliga a darle un type.
