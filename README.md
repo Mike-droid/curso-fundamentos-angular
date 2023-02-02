@@ -578,3 +578,5 @@ export class AppComponent {
 ## Estilos
 
 ### Estilos a la lista de productos
+
+### NgClass y NgStyle
